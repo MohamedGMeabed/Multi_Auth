@@ -37,13 +37,7 @@ class HomeController extends Controller
     }
     
     public function infoSite(){
-        if(Auth::user()->status=='accepted'){
         return view('siteInfo');
-        }elseif(Auth::user()->status=='pending'){
-            return view('approve');
-            }else{
-            return view('reject');
-        }
     }
    
 }

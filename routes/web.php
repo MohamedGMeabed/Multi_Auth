@@ -34,7 +34,7 @@ Route::group(['prefix'=>'admin','middleware'=>'guest:admin'],function(){
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
-Route::get('/site', [App\Http\Controllers\HomeController::class, 'infoSite']);
+Route::get('/site', [App\Http\Controllers\HomeController::class, 'infoSite'])->middleware('Accepted');
 
 
 Route::group(['prefix'=>'admin', 'middleware' => 'auth:admin'], function () {
