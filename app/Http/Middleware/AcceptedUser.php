@@ -19,14 +19,12 @@ class AcceptedUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check()){
+       if(Auth::check()){
         
-        if(Auth::user()->status == 'accepted'){
-            return response()->view('siteInfo');
-        }else{
+        if(Auth::user()->status !== 'accepted'){
             return redirect(RouteServiceProvider::HOME);
         }
     }
-       //return $next($request);
+       return $next($request);
     }
 }
