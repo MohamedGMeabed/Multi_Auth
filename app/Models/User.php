@@ -43,17 +43,7 @@ class User extends Authenticatable
     ];
 
 
-    public function Accepted(){
-        return $this->hasOne('App\Models\User')->where('status','accepted');
-     }
-    
-     public function Pending(){
-        return $this->hasOne('App\Models\User')->where('status','pending');
-     }
-    
-     public function Rejected(){
-        return $this->hasOne('App\Models\User')->where('status','rejected');
-     }
+   
 
     
 }
